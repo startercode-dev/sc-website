@@ -1,0 +1,263 @@
+@use '../helper' as *;
+
+.projects {
+    width: min(90%);
+    margin-inline-start: auto;
+    align-items: center;
+    color: $sc-dark;
+    overflow-x: hidden;
+
+    &__content {
+        gap: 1rem;
+        clip-path: inset(
+            -100vw -100vw -100vw 0
+        ); /* HIDE OVERFLOW ON LEFT ONLY */
+    }
+
+    &__info {
+        flex-direction: column;
+        justify-content: center;
+        gap: $space-m;
+
+        position: relative;
+
+        @media screen and (max-width: 35rem) {
+            gap: $space-xs;
+        }
+
+        @media screen and (max-width: 26rem) {
+            gap: 1.2rem;
+        }
+    }
+
+    .info-title {
+        font-family: $serif;
+        line-height: 1;
+        font-size: $step-4;
+
+        align-items: center;
+
+        @media screen and (max-width: 35rem) {
+            font-size: $step-3;
+            flex-direction: column-reverse;
+            align-items: flex-start;
+        }
+
+        @media screen and (min-width: 119rem) {
+            font-size: $step-5;
+        }
+    }
+
+    .title-logos {
+        padding-top: 3rem;
+        margin-left: $space-xl;
+        gap: $space-l;
+
+        img {
+            width: $step-1;
+        }
+
+        @media screen and (max-width: 94rem) {
+            gap: $space-m;
+        }
+
+        @media screen and (max-width: 50rem) {
+            padding-top: 2rem;
+            margin-left: $space-s;
+            gap: $space-s;
+
+            img {
+                width: calc($step-0 + 0.5rem);
+            }
+        }
+
+        @media screen and (max-width: 35rem) {
+            margin-left: 0.2rem;
+            padding-top: 0;
+
+            img {
+                width: $step--1;
+            }
+        }
+
+        @media screen and (max-width: 26rem) {
+        }
+    }
+
+    .info-description {
+        font-family: $sans;
+        font-size: calc($step--1 - 0.1rem);
+        font-weight: 300;
+        line-height: 1.5;
+
+        width: min(55%, 80rem);
+        height: 15rem;
+
+        @media screen and (max-width: 85rem) {
+            width: min(65%, 80rem);
+        }
+
+        @media screen and (max-width: 66rem) {
+            width: min(75%, 80rem);
+        }
+
+        @media screen and (max-width: 50rem) {
+            width: min(90%, 80rem);
+        }
+
+        @media screen and (max-width: 26rem) {
+            font-size: calc($step--2 - 0rem);
+            font-weight: 400;
+            height: 13rem;
+        }
+    }
+
+    .info-links {
+        font-family: $sans;
+        font-size: $step-0;
+
+        gap: $space-2xs;
+
+        @media screen and (max-width: 26rem) {
+            font-size: $step--1;
+        }
+    }
+
+    .line {
+        font-weight: 200;
+    }
+
+    .visit {
+        color: $sc-red;
+    }
+
+    .swiper {
+        width: min(90vw);
+        --swiper-theme-color: #343434;
+        overflow: visible;
+
+        clip-path: inset(-100vw -100vw -100vw 0);
+
+        margin-top: $space-3xs;
+    }
+
+    .swiper-slide {
+        cursor: pointer;
+        width: auto;
+    }
+
+    .project {
+        flex-direction: column;
+        gap: $space-3xs;
+        font-family: $sans;
+        font-size: $step--1;
+
+        @media screen and (max-width: 26rem) {
+            gap: 0.2rem;
+        }
+    }
+
+    .project-title span {
+        font-size: $step--3;
+        margin-left: $space-3xs;
+    }
+
+    .project-img {
+        padding: $space-2xs;
+        padding-top: calc($space-2xs - 0.2rem); /* fix unevenness */
+        background-color: #3c614c66;
+        border-radius: 5px;
+
+        width: min(70vw, 56rem);
+
+        @media screen and (max-width: 26rem) {
+            padding: 0.6rem;
+            padding-top: 0.5rem; /* fix unevenness */
+        }
+    }
+
+    .section-title {
+        @include section-title(5rem);
+
+        position: absolute;
+        left: 50%;
+        bottom: 0%;
+
+        @media screen and (max-width: 94rem) {
+            font-size: calc($step-5 + 3rem);
+            left: 42%;
+        }
+
+        @media screen and (max-width: 66rem) {
+            font-size: calc($step-5 + 2rem);
+            left: 39%;
+        }
+
+        @media screen and (max-width: 50rem) {
+            font-size: calc($step-5 + 0rem);
+        }
+
+        @media screen and (max-width: 26rem) {
+            font-size: $step-4;
+        }
+
+        @media screen and (min-width: 119rem) {
+            font-size: calc($step-5 + 8rem);
+        }
+    }
+
+    .active {
+        .project-title {
+            font-weight: 600;
+
+            span {
+                font-size: $step--2;
+                color: $sc-green;
+                font-weight: 400;
+            }
+        }
+
+        .project-img {
+            background-color: $sc-green;
+        }
+    }
+
+    /* ANIMATION */
+    .init-animation {
+        .title-name,
+        .title-logos,
+        .info-description,
+        .info-links {
+            opacity: 0;
+            transform: translateX(3%);
+            transition: all 150ms linear 800ms;
+        }
+        .title-logos {
+            transform: translateX(10%);
+            transition: all 150ms linear 800ms;
+        }
+
+        .animation {
+            opacity: 0;
+            transition: all 150ms linear 800ms;
+        }
+    }
+
+    .title-name {
+        transition: opacity 200ms linear, transform 200ms linear;
+    }
+
+    .info-description {
+        transition: opacity 200ms linear 200ms, transform 200ms linear 200ms;
+    }
+
+    .title-logos,
+    .info-links {
+        transition: opacity 400ms cubic-bezier(0, 0.55, 0.38, 0.97) 400ms,
+            transform 400ms cubic-bezier(0, 0.55, 0.38, 0.97) 400ms;
+    }
+
+    .animation {
+        transition: opacity 1000ms linear;
+    }
+}

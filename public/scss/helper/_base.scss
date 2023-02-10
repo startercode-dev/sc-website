@@ -1,0 +1,62 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    min-height: 100%;
+    font-weight: 400;
+    background-color: #f0f0f0;
+}
+
+img,
+picture,
+svg,
+video {
+    display: block;
+    max-width: 100%;
+}
+
+.section-title {
+    cursor: default;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.grid {
+    display: grid;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.hidden {
+    display: none;
+}
+
+.hide {
+    opacity: 0;
+}
+
+.show {
+    opacity: 1;
+}

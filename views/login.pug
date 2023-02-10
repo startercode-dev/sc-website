@@ -1,0 +1,27 @@
+extends base
+
+block body
+  main.login-main
+    .login-form
+      h2.heading-secondary.ma-bt-lg Log into your account
+      form.form.form--login
+        .login-form__group
+          label.login-form__label(for='email') Email address
+          input#email.login-form__input(
+            type='email',
+            placeholder='you@example.com',
+            required
+          )
+        .login-form__group.ma-bt-md
+          label.login-form__label(for='password') Password
+          input#password.login-form__input(
+            type='password',
+            placeholder='••••••••',
+            required,
+            minlength='2'
+          )
+        .login-form__group.ma-bt-md
+          a.forgot-password.link(href='/forgotPassword') forgot password?
+        .login-form__group.flex.space-between
+          button.btn-auth.btn-auth-login LOGIN
+          a.btn-auth.btn-auth-back.btn--small(href='/') back

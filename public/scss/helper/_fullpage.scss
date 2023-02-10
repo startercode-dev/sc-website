@@ -1,0 +1,15 @@
+@use './variables' as *;
+
+.fullpage {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    height: 100vh;
+    height: $docHeight;
+
+    section {
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+        min-height: 100%;
+    }
+}

@@ -1,0 +1,28 @@
+@use './variables' as *;
+
+.popup-box {
+    background: #eb4d4b;
+    color: $sc-white;
+    font-family: $serif;
+    border-radius: 3px;
+    position: fixed;
+    top: 3rem;
+    right: 5rem;
+    z-index: 1000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    transition: all 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+    .popup-message {
+        font-size: 2rem;
+        font-weight: 500;
+        max-width: 58rem;
+    }
+}
+
+.popup-box.hide {
+    top: -30rem;
+    opacity: 0;
+}

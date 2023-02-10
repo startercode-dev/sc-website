@@ -1,0 +1,243 @@
+/* **************************** */
+/* OUR TEAM SECTION  */
+/* **************************** */
+@use '../helper' as *;
+
+.team {
+    width: min(80%, 144rem);
+    margin-inline: auto;
+    align-items: center;
+
+    .container,
+    .container-mobile {
+        justify-self: center;
+        grid-template-columns: 1fr 1fr;
+        column-gap: calc($space-3xl + 5rem);
+
+        position: relative;
+
+        @media screen and (max-width: 94rem) {
+            column-gap: $space-3xl;
+        }
+
+        @media screen and (max-width: 66rem) {
+            column-gap: $space-m;
+        }
+    }
+
+    .container-mobile {
+        row-gap: $space-s;
+        justify-self: center;
+
+        @media screen and (max-width: 26rem) {
+            row-gap: $space-2xs;
+        }
+
+        .team__info {
+            grid-column: 1 / -1;
+            gap: 0.5rem;
+        }
+
+        .active {
+            transform: scale(1.05);
+            box-shadow: 0 0 0 1px $sc-green;
+            border: 1px solid #f0f0f0;
+            border-radius: 0;
+        }
+        .team__img.active {
+            img {
+                border-radius: 0;
+            }
+        }
+    }
+
+    &__img {
+        height: 60vh;
+        background-color: $sc-green;
+        padding: $step--5;
+        border-radius: 5px;
+        margin-bottom: $space-s;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        @media screen and (max-width: 94rem) {
+            height: 55vh;
+        }
+
+        @media screen and (max-width: 85rem) {
+            margin-bottom: $space-3xs;
+        }
+
+        @media screen and (max-width: 50rem) {
+            height: 45vh;
+        }
+
+        @media screen and (max-width: 35rem) {
+            height: 40vh;
+        }
+
+        @media screen and (max-width: 26rem) {
+            height: 36vh;
+            padding: 0.5rem;
+        }
+    }
+
+    &__info {
+        grid-auto-flow: column;
+        gap: $space-xs;
+        align-self: start;
+
+        @media screen and (max-width: 85rem) {
+            grid-auto-flow: row;
+            gap: $space-2xs;
+        }
+    }
+
+    .flex-column {
+        gap: $space-2xs;
+    }
+
+    .member-name {
+        font-family: $serif;
+        line-height: 1;
+    }
+
+    .member-name {
+        font-size: $step-1;
+        color: $sc-green;
+
+        @media screen and (max-width: 35rem) {
+            font-size: 2.4rem;
+        }
+    }
+
+    .member-position,
+    .member-description {
+        font-family: $sans;
+        line-height: 1;
+    }
+
+    .member-position {
+        font-size: $step--2;
+        font-weight: 300;
+
+        @media screen and (max-width: 35rem) {
+            font-size: 1.6rem;
+        }
+    }
+
+    .member-description {
+        font-size: $step--3;
+        line-height: 1.5;
+
+        @media screen and (max-width: 35rem) {
+            font-size: 1.2rem;
+            height: 13rem;
+        }
+
+        @media screen and (max-width: 26rem) {
+            font-size: 1.1rem;
+        }
+    }
+
+    .section-title {
+        @include section-title(5rem);
+        line-height: 1;
+        position: absolute;
+        writing-mode: vertical-lr;
+        white-space: nowrap;
+
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%) rotate(180deg);
+
+        @media screen and (max-width: 94rem) {
+            @include section-title(3rem);
+        }
+
+        @media screen and (max-width: 66rem) {
+            writing-mode: horizontal-tb;
+            top: 0;
+            left: 0;
+            transform: translate(0);
+        }
+
+        @media screen and (max-width: 35rem) {
+            @include section-title(2rem);
+            top: -10%;
+            left: 50%;
+            transform: translate(-50%);
+        }
+
+        @media screen and (max-width: 26rem) {
+            @include section-title(1rem);
+        }
+    }
+
+    @media screen and (min-width: 35rem) {
+        .member1 {
+            transform: translateY(1%);
+        }
+        .member2 {
+            transform: translateY(-1%);
+        }
+    }
+
+    @media screen and (max-width: 35rem) {
+        .container {
+            display: none;
+        }
+
+        .container-mobile {
+            display: grid;
+        }
+    }
+
+    /* ANIMATION */
+    .init-animation {
+        .img1,
+        .member1 .team__info {
+            opacity: 0;
+            transform: translateY(10%);
+            transition: all 150ms linear 800ms;
+        }
+        .img2,
+        .member2 .team__info {
+            opacity: 0;
+            transform: translateY(-10%);
+            transition: all 150ms linear 800ms;
+        }
+        .container-mobile .team__info,
+        .container-mobile .img-ronald,
+        .container-mobile .img-jason {
+            opacity: 0;
+            transition: all 150ms linear 800ms;
+        }
+        .container-mobile .img-jason {
+            transform: translateY(-2%);
+            transition: all 150ms linear 800ms;
+        }
+        .container-mobile .img-ronald {
+            transform: translateY(2%);
+            transition: all 150ms linear 800ms;
+        }
+    }
+
+    .img1,
+    .member1 .team__info,
+    .img2,
+    .member2 .team__info {
+        transition: opacity 500ms ease-out 100ms, transform 500ms ease-out 100ms;
+    }
+
+    .container-mobile .img-ronald,
+    .container-mobile .img-jason,
+    .container-mobile .team__info {
+        transition: opacity 500ms ease-out 100ms, transform 500ms ease-out 100ms;
+    }
+}

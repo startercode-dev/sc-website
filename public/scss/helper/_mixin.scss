@@ -1,0 +1,8 @@
+@use './variables' as *;
+
+@mixin section-title($rem) {
+    font-size: calc($step-5 + $rem);
+    line-height: 1;
+    color: #cecece;
+    opacity: 30%;
+}

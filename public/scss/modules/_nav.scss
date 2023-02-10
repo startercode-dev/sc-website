@@ -1,0 +1,43 @@
+@use '../helper' as *;
+
+.nav {
+    width: min(100%, 256rem);
+    margin-inline: auto;
+    border-bottom: 1px solid #00000009;
+
+    &-bar {
+        position: relative;
+        align-items: center;
+    }
+
+    .text-logo {
+        margin-left: $space-m;
+        width: calc($step-5 + 2rem);
+    }
+
+    .icon-logo {
+        width: $step-4;
+    }
+
+    .icon-logo-link {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%);
+    }
+
+    .nav-links {
+        align-items: center;
+        font-weight: 500;
+        margin-right: $space-l;
+        font-family: $sans;
+        font-size: $step--1;
+        line-height: 0.9;
+
+        a {
+            color: $sc-red;
+            &:hover {
+                color: #ff0000;
+            }
+        }
+    }
+}

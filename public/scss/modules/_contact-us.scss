@@ -1,0 +1,219 @@
+@use '../helper' as *;
+
+.contact-us {
+    width: min(80%, 192rem);
+    margin-inline: auto;
+    color: $sc-dark;
+
+    h2 {
+        font-family: $serif;
+        font-weight: 600;
+        font-size: $step-3;
+        color: $sc-green;
+    }
+
+    p {
+        font-family: $sans;
+        font-weight: 300;
+        font-size: $step--1;
+
+        padding-left: 0.3rem; /* fix uneveness */
+    }
+
+    .location {
+        font-size: $step--2;
+        font-style: italic;
+
+        @media screen and (max-width: 26rem) {
+            font-size: 1.2rem;
+        }
+    }
+
+    input,
+    select {
+        border: none;
+        border-bottom: 1px solid $sc-dark;
+        border-radius: 0;
+        background-color: $sc-white;
+        padding: $space-2xs;
+        color: $sc-dark;
+    }
+
+    input {
+        padding-left: 1.5rem; /* fix unevenness */
+    }
+
+    select {
+        padding-left: 1rem;
+    }
+
+    &__content {
+        flex-direction: column;
+        align-self: center;
+        gap: $space-l;
+
+        position: relative;
+    }
+
+    .title {
+        gap: $space-2xs;
+    }
+
+    .contact-form {
+        grid-template-columns: 1fr 1fr;
+        column-gap: $space-xl;
+        row-gap: $space-s;
+
+        font-family: $sans;
+        font-size: $step--2;
+    }
+
+    .message {
+        grid-column: 2 / 3;
+        grid-row: 1 / 5;
+        resize: none;
+        border: none;
+        border-bottom: 1px solid $sc-dark;
+        border-radius: 0;
+        background-color: $sc-white;
+        padding: $space-2xs;
+    }
+
+    .submit-btn {
+        font-size: $step-3;
+        font-weight: 700;
+        justify-self: start;
+        color: $sc-red;
+        gap: $space-2xs;
+        align-items: center;
+
+        i {
+            color: $sc-dark;
+            transform: translate(0, 1px);
+        }
+    }
+
+    .social-logos {
+        gap: $space-s;
+
+        img {
+            width: $step-0;
+        }
+    }
+
+    .section-title {
+        @include section-title(4rem);
+        position: absolute;
+        bottom: -5%;
+        right: 0;
+
+        @media screen and (max-width: 66rem) {
+            @include section-title(2rem);
+        }
+    }
+
+    /* **** LAYOUT CHANGE **** */
+    @media screen and (max-width: 66rem) {
+        h2,
+        p {
+            text-align: center;
+        }
+
+        &__content {
+            gap: $space-s;
+        }
+
+        .title {
+            justify-items: center;
+        }
+
+        .contact-form {
+            grid-template-columns: 1fr;
+
+            gap: $space-2xs;
+        }
+
+        .message {
+            grid-area: auto;
+            height: 20rem;
+        }
+
+        .section-title {
+            bottom: -2%;
+            font-size: $step-5;
+        }
+    }
+
+    @media screen and (max-width: 35rem) {
+        h2 {
+            font-size: 3.2rem;
+        }
+
+        p {
+            font-size: 1.2rem;
+            font-weight: 400;
+        }
+
+        input,
+        select {
+            padding: 0.6rem;
+        }
+
+        &__content {
+            gap: 1rem;
+        }
+
+        .title {
+            gap: 0.2rem;
+        }
+
+        .message {
+            padding: 0.6rem;
+            height: 15rem;
+        }
+
+        .section-title {
+            bottom: -1%;
+            font-size: 3.6rem;
+        }
+    }
+
+    @media screen and (max-width: 26rem) {
+        &__content {
+            gap: 0.5rem;
+        }
+
+        .contact-form {
+            gap: 0.5rem;
+        }
+
+        .message {
+            height: 14rem;
+        }
+
+        .section-title {
+            font-size: 2.6rem;
+        }
+    }
+
+    /* ANIMATION */
+    .init-animation {
+        .title,
+        .contact-form,
+        .social-logos {
+            opacity: 0;
+            transform: translateX(3%);
+            transition: all 150ms linear 800ms;
+        }
+    }
+
+    .title {
+        transition: opacity 500ms, transform 500ms;
+    }
+    .contact-form {
+        transition: opacity 500ms 200ms, transform 500ms 200ms;
+    }
+    .social-logos {
+        transition: opacity 500ms 350ms, transform 500ms 350ms;
+    }
+}

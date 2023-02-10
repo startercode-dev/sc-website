@@ -1,0 +1,39 @@
+@use './variables' as *;
+
+%btn {
+    cursor: pointer;
+    border: none;
+    background: none;
+    text-decoration: none;
+    color: inherit;
+
+    &:hover {
+    }
+
+    &:active {
+    }
+}
+
+.btn {
+    @extend %btn;
+}
+
+.btn--small {
+    @extend %btn;
+}
+
+%link {
+    cursor: pointer;
+    text-decoration: none;
+    border: none;
+    color: $sc-dark;
+
+    &:link,
+    &:visited {
+        text-decoration: none;
+    }
+}
+
+.link {
+    @extend %link;
+}

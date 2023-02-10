@@ -1,0 +1,82 @@
+@use '../helper/' as *;
+
+.formConfirm,
+.userConfirmed {
+    font-family: $sans;
+    text-transform: lowercase;
+    text-decoration: none;
+    height: 70rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 4rem;
+
+    h1 {
+        font-size: $step-3;
+        text-align: center;
+        line-height: 0.9;
+        font-weight: 300;
+
+        @media screen and (max-width: 84rem) {
+            font-size: $step-2;
+        }
+
+        @media screen and (max-width: 53rem) {
+            font-size: $step-1;
+        }
+    }
+
+    .return-home-link {
+        color: #d8340e;
+        font-size: 2rem;
+        font-weight: 700;
+
+        &:hover {
+            color: #e05d3e;
+        }
+    }
+}
+
+.formConfirm {
+    .left-shift {
+        transform: translateX(-40%);
+    }
+    .right-shift {
+        transform: translateX(20%);
+        margin-bottom: 5rem;
+    }
+}
+
+.userConfirmed {
+    .left-shift {
+        transform: translateX(-10%);
+    }
+    .right-shift {
+        transform: translateX(10%);
+        margin-bottom: 5rem;
+    }
+}
+
+@media screen and (max-width: 44rem) {
+    .formConfirm {
+        .left-shift {
+            transform: translateX(0%);
+        }
+        .right-shift {
+            transform: translateX(0%);
+            margin-bottom: 5rem;
+        }
+    }
+
+    .userConfirmed {
+        .left-shift {
+            transform: translateX(0%);
+        }
+        .right-shift {
+            transform: translateX(0%);
+            margin-bottom: 5rem;
+        }
+    }
+}

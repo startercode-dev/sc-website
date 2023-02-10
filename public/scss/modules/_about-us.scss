@@ -1,0 +1,324 @@
+@use '../helper' as *;
+
+/* **************************** */
+/* WHAT WE DO SECTION  */
+/* **************************** */
+.about-us {
+    width: min(80%, 192rem);
+    margin: 0 auto;
+    align-items: center;
+    color: $sc-dark;
+
+    &__content {
+        grid-auto-flow: column;
+        grid-auto-columns: 1fr;
+
+        gap: $space-s;
+        justify-self: center;
+
+        position: relative;
+        height: 90%;
+
+        @media screen and (max-width: 85rem) {
+            grid-auto-columns: 1fr 1.35fr;
+        }
+    }
+
+    .content-main {
+        flex-direction: column;
+        justify-content: center;
+        gap: $space-m;
+    }
+
+    .tabs {
+        list-style: none;
+        font-family: $sans;
+        font-size: $step-0;
+        gap: calc($space-xl - 1rem);
+    }
+
+    .tab {
+        color: inherit;
+    }
+
+    .tab.active {
+        color: $sc-red;
+    }
+
+    .title {
+        font-family: $serif;
+        font-size: $step-4;
+        line-height: 1;
+        transform: translateX(-1%);
+
+        @media screen and (min-width: 119rem) {
+            font-size: $step-5;
+        }
+
+        @media screen and (max-width: 94rem) {
+            font-size: $step-3;
+        }
+
+        @media screen and (max-width: 85rem) {
+            font-size: $step-2;
+        }
+    }
+
+    .description {
+        font-family: $sans;
+        font-weight: 300;
+        font-size: calc($step--1 - 0.2rem);
+        line-height: 1.7;
+        height: 33rem;
+
+        @media screen and (min-width: 119rem) {
+            font-size: $step-0;
+        }
+
+        @media screen and (max-width: 85rem) {
+            font-size: calc($step--1 - 0.35rem);
+        }
+    }
+
+    .cta-get-started {
+        font-family: $sans;
+        font-size: $step--1;
+        color: $sc-red;
+        width: fit-content;
+        border: 2px solid $sc-red;
+        border-radius: 5px;
+        padding: $space-3xs $space-m;
+
+        margin-top: $space-xl;
+
+        @media screen and (min-width: 119rem) {
+            font-size: $step-0;
+        }
+    }
+
+    /* IMAGES */
+    .content-img {
+        position: relative;
+        align-self: center;
+    }
+
+    .img-1,
+    .img-2,
+    .img-3 {
+        box-shadow: 0px 0px 5px 1px #3c614c3a;
+        padding: $space-2xs;
+        margin-inline: auto;
+        width: 100%;
+        height: 75vh;
+        border-radius: 5px;
+        object-fit: cover;
+        z-index: 1;
+        background-color: $sc-green;
+    }
+
+    .section-title {
+        @include section-title(5rem);
+
+        position: absolute;
+        white-space: nowrap;
+        bottom: -5%;
+        right: 15%;
+
+        @media screen and (min-width: 119rem) {
+            font-size: calc($step-5 + 10.5rem);
+        }
+
+        @media screen and (max-width: 94rem) {
+            bottom: -5%;
+            font-size: calc($step-5 + 5rem);
+        }
+
+        @media screen and (max-width: 85rem) {
+            right: 0%;
+        }
+    }
+
+    /*****! LAYOUT CHANGE *****/
+    @media screen and (max-width: 66rem) {
+        &__content {
+            grid-auto-flow: row;
+            grid-auto-rows: auto;
+            gap: $space-m;
+        }
+
+        .content-main {
+            gap: $space-s;
+            height: 100%;
+            position: relative;
+        }
+
+        .tabs {
+            font-size: $step-0;
+            gap: calc($space-xl - 1.5rem);
+
+            position: absolute;
+            right: -8%;
+            top: 50%;
+            transform: translate(0, -50%);
+
+            flex-direction: column;
+        }
+
+        .title {
+            font-size: $step-3;
+        }
+
+        .description {
+            font-size: $step--2;
+            line-height: 1.6;
+            height: 15rem;
+        }
+
+        .content-img {
+            height: 45vh;
+            align-self: start;
+        }
+
+        .img-1,
+        .img-2,
+        .img-3 {
+            width: 100%;
+            height: 100%;
+        }
+
+        .cta-get-started {
+            margin-top: 0;
+            font-size: $step--2;
+            border: 1.5px solid $sc-red;
+        }
+
+        .section-title {
+            bottom: -5%;
+            right: -5%;
+            font-size: calc($step-5 + 3rem);
+        }
+    }
+
+    @media screen and (max-width: 50rem) {
+        .content-img {
+            height: 40vh;
+        }
+
+        .title {
+            font-size: $step-3;
+        }
+
+        .description {
+            font-size: $step--2;
+            height: 16rem;
+        }
+
+        .section-title {
+            bottom: -5%;
+            right: -10%;
+            font-size: calc($step-5 + 2.5rem);
+        }
+    }
+
+    @media screen and (max-width: 35rem) {
+        .section-title {
+            bottom: -3%;
+            font-size: calc($step-5 + 1rem);
+        }
+
+        .description {
+            height: 17rem;
+        }
+    }
+
+    @media screen and (max-width: 26rem) {
+        &__content {
+            width: 100%;
+            gap: 0rem;
+        }
+
+        .content-main {
+            gap: 1rem;
+        }
+
+        .content-img {
+            height: 30vh;
+        }
+
+        .img-1,
+        .img-2,
+        .img-3 {
+            padding: 0.6rem;
+        }
+
+        .title {
+            font-size: 3rem;
+        }
+
+        .tabs {
+            right: -6%;
+            gap: $space-l;
+            font-size: 1.6rem;
+        }
+
+        .description {
+            width: 95%;
+            font-size: 1.2rem;
+            font-weight: 400;
+            line-height: 1.4;
+            height: 15rem;
+        }
+
+        .section-title {
+            bottom: -5%;
+            right: 0%;
+            font-size: $step-5;
+        }
+    }
+
+    /* ANIMATION */
+    .init-animation {
+        .tabs,
+        .title,
+        .description {
+            opacity: 0;
+            transform: translateX(5%);
+            transition: all 150ms linear 800ms;
+        }
+        .description {
+            transform: translateX(3%);
+        }
+
+        .cta-get-started,
+        .img-1 {
+            opacity: 0;
+            transition: all 150ms linear 800ms;
+        }
+    }
+
+    .tabs {
+        transition: opacity 200ms linear 100ms, transform 200ms linear 100ms;
+    }
+    .title {
+        transition: opacity 200ms linear 150ms, transform 200ms linear 150ms;
+    }
+    .description {
+        transition: opacity 400ms cubic-bezier(0, 0.55, 0.38, 0.97) 300ms,
+            transform 400ms cubic-bezier(0, 0.55, 0.38, 0.97) 300ms;
+    }
+
+    .cta-get-started,
+    .img-1 {
+        transition: opacity 700ms cubic-bezier(0, 0.72, 0.57, 0.99) 150ms;
+    }
+
+    @media screen and (max-width: 66rem) {
+        .tabs {
+            transition: opacity 350ms linear 300ms, transform 400ms linear 300ms;
+        }
+
+        .init-animation .tabs {
+            transform: translateY(-20%);
+        }
+    }
+}
