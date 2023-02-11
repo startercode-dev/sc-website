@@ -24,16 +24,6 @@ $('.cta-get-started, .contact-link').on('click', (e) => {
     });
 });
 
-const clickScroll = (className, section) => {
-    //click and scrolling to the selected section
-    $(`.${className}`).on('click', (e) => {
-        e.preventDefault();
-        $(`.${section}`)[0].scrollIntoView({
-            behavior: 'smooth',
-        });
-    });
-};
-
 const documentHeight = () => {
     const doc = document.documentElement;
     const height = window.innerHeight - $('.nav').height();
@@ -41,6 +31,7 @@ const documentHeight = () => {
 };
 documentHeight();
 window.addEventListener('resize', documentHeight);
+$('window').scrollTop(0);
 
 export const formSubmit = async () => {
     const data = {
