@@ -5,7 +5,9 @@ import * as account from './views-js/account.view';
 import * as home from './views-js/home.view';
 
 // APPLICATION START
-$(async function () {
+$(function () {
+    $('window').scrollTop(0);
+
     // FORM
     eventRoute('.submit-btn', 'click', home.formSubmit);
 

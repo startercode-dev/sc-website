@@ -31,7 +31,6 @@ const documentHeight = () => {
 };
 documentHeight();
 window.addEventListener('resize', documentHeight);
-$('window').scrollTop(0);
 
 export const formSubmit = async () => {
     const data = {

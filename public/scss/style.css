@@ -397,7 +397,6 @@ video {
   align-items: center;
   color: #343434;
   /* IMAGES */
-  /*****! LAYOUT CHANGE *****/
   /* ANIMATION */
 }
 .about-us__content {
@@ -533,18 +532,13 @@ video {
     gap: clamp(2.81rem, 2.3rem + 1.36vw, 3.94rem);
   }
   .about-us .content-main {
-    gap: clamp(1.88rem, 1.53rem + 0.91vw, 2.63rem);
+    gap: clamp(1.44rem, 1.18rem + 0.68vw, 2rem);
     height: 100%;
     position: relative;
   }
   .about-us .tabs {
     font-size: clamp(1.88rem, 1.36rem + 1.36vw, 3rem);
     gap: calc(clamp(5.63rem, 4.6rem + 2.73vw, 7.88rem) - 1.5rem);
-    position: absolute;
-    right: -8%;
-    top: 50%;
-    transform: translate(0, -50%);
-    flex-direction: column;
   }
   .about-us .title {
     font-size: clamp(3.24rem, 2.05rem + 3.18vw, 5.86rem);

@@ -138,7 +138,7 @@
         }
     }
 
-    /*****! LAYOUT CHANGE *****/
+    // *****! LAYOUT CHANGE *****/
     @media screen and (max-width: 66rem) {
         &__content {
             grid-auto-flow: row;
@@ -147,7 +147,7 @@
         }
 
         .content-main {
-            gap: $space-s;
+            gap: $space-xs;
             height: 100%;
             position: relative;
         }
@@ -156,12 +156,12 @@
             font-size: $step-0;
             gap: calc($space-xl - 1.5rem);
 
-            position: absolute;
-            right: -8%;
-            top: 50%;
-            transform: translate(0, -50%);
+            // position: absolute;
+            // right: -8%;
+            // top: 50%;
+            // transform: translate(0, -50%);
 
-            flex-direction: column;
+            // flex-direction: column;
         }
 
         .title {
