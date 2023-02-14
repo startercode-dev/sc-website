@@ -546,7 +546,7 @@ video {
   .about-us .description {
     font-size: clamp(1.3rem, 1.02rem + 0.75vw, 1.92rem);
     line-height: 1.6;
-    height: 15rem;
+    height: 13rem;
   }
   .about-us .content-img {
     height: 45vh;
@@ -578,7 +578,7 @@ video {
   }
   .about-us .description {
     font-size: clamp(1.3rem, 1.02rem + 0.75vw, 1.92rem);
-    height: 16rem;
+    height: 15rem;
   }
   .about-us .section-title {
     bottom: -5%;
@@ -592,7 +592,7 @@ video {
     font-size: calc(clamp(4.67rem, 2.63rem + 5.44vw, 9.15rem) + 1rem);
   }
   .about-us .description {
-    height: 17rem;
+    height: 15rem;
   }
 }
 @media screen and (max-width: 26rem) {
@@ -624,7 +624,7 @@ video {
     font-size: 1.2rem;
     font-weight: 400;
     line-height: 1.4;
-    height: 15rem;
+    height: 13rem;
   }
   .about-us .section-title {
     bottom: -5%;
