@@ -18,7 +18,7 @@ exports.getAppMain = catchAsync(async (req, res, next) => {
     }
 
     res.status(200).render('home', {
-        title: 'startercode',
+        title: 'Startercode: Website & Web App Design and Development',
     });
 });
 
