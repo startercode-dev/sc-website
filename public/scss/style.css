@@ -592,7 +592,7 @@ video {
     font-size: calc(clamp(4.67rem, 2.63rem + 5.44vw, 9.15rem) + 1rem);
   }
   .about-us .description {
-    height: 15rem;
+    height: 14rem;
   }
 }
 @media screen and (max-width: 26rem) {
@@ -624,7 +624,7 @@ video {
     font-size: 1.2rem;
     font-weight: 400;
     line-height: 1.4;
-    height: 13rem;
+    height: 12rem;
   }
   .about-us .section-title {
     bottom: -5%;

@@ -22,6 +22,12 @@ exports.getAppMain = catchAsync(async (req, res, next) => {
     });
 });
 
+exports.getUpworkMain = (req, res) => {
+    res.status(200).render('upwork', {
+        title: 'Startercode: Website & Web App Design and Development',
+    });
+};
+
 exports.getLoginForm = (req, res) => {
     res.status(200).render('login', {
         title: 'startercode | log in',

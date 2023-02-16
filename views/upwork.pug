@@ -1,0 +1,206 @@
+extends base
+
+block body
+  nav.nav
+    .nav-bar.flex.space-between
+      a.text-logo-link(href='/')
+        img.text-logo(src='/imgs/text-logo.png', alt='text startercode logo')
+      a.icon-logo-link(href='/')
+        img.icon-logo(src='/imgs/main-logo.png', alt='icon startercode logo')
+      .nav-links
+        a.contact-link.link(href='#contact-us') contact
+
+  main.fullpage
+    //-! HERO
+    section.hero
+      .hero__content.grid.init-animation
+        .hero__main.flex
+          .main-left
+            | design .
+            br
+          .line
+          .main-right
+            | develop
+            br
+            | share
+        .hero__cta
+          a.link.cta-get-started(href='#contact-us') Get Started
+          .circular-text Design-Develop-Share-
+        .hero__description
+          h1 Design, develop, and share your website and web app with the world! Stand out from the crowd and capture the attention of your ideal customers with our captivating designs, that showcase the essence of your business and lead them seamlessly to sign up!
+        .hero__learn-more.flex
+          a.btn.learn-more-btn(href='#about-us') learn more
+          i.ph-arrow-circle-down-thin
+
+    //-! ABOUT US 
+    section#about-us.about-us.grid
+      #tab1.about-us__content.grid.init-animation
+        .content-main.flex
+          ul.tabs.flex
+            li
+              a.tab.tab--1.active.btn(data-tab='1') 01
+            li
+              a.tab.tab--2.btn(data-tab='2') 02
+            li
+              a.tab.tab--3.btn(data-tab='3') 03
+          h2.title Design &amp; Layout
+          p.description We design visually appealing and user-friendly websites to effectively communicate our clients&apos; message to their target audience. Our team takes the time to understand our clients&apos; goals and the needs of their target audience to create a website that meets their specific needs.
+          a.cta-get-started.btn(href='#contact-us') Get Started
+        .content-img
+          img.img-1(
+            src='/imgs/about-us/design.webp',
+            alt='Image of a person designing a wireframe on an iPad device.'
+          )
+          .section-title ABOUT US
+
+    //-! PROJECTS
+    section#projects.projects.grid
+      .projects__content.grid.init-animation
+        .projects__info.flex
+          //- dynamic render
+        .swiper.animation
+          .swiper-wrapper
+            //- Slides
+            .swiper-slide
+              .project.active.project-interval.flex(data-project='interval')
+                h3.project-title
+                  | interval.app
+                  span full-stack webapp
+                .project-img
+                  img(src='/imgs/projects-imgs/interval.webp')
+            .swiper-slide
+              .project.project-sunnyside.flex(data-project='sunnyside')
+                h3.project-title
+                  | sunnyside
+                  span landing page
+                .project-img
+                  img(src='/imgs/projects-imgs/sunnyside.webp')
+            .swiper-slide
+              .project.project-blogr.flex(data-project='blogr')
+                h3.project-title
+                  | blogr
+                  span landing web
+                .project-img
+                  img(src='/imgs/projects-imgs/blogr.webp')
+            .swiper-slide
+              .project.project-space.flex(data-project='space')
+                h3.project-title
+                  | space tourism
+                  span multipage website
+                .project-img
+                  img(src='/imgs/projects-imgs/space.webp')
+            .swiper-slide
+              .project.project-dinero.flex(data-project='dinero')
+                h3.project-title
+                  | dinero
+                  span landing page
+                .project-img
+                  img(src='/imgs/projects-imgs/dinero.webp')
+            .swiper-slide
+              .project.project-nything.flex(data-project='nything')
+                h3.project-title
+                  | nything
+                  span full-stack webapp
+                .project-img
+                  img(src='/imgs/projects-imgs/nything.webp')
+          //- scrollbar
+          .swiper-scrollbar
+
+    //-! THE TEAM
+    section#team.team.grid
+      .team__content.init-animation
+        .container.grid
+          .member1
+            .team__img.img1
+              img(src='/imgs/team-pics/ronald.webp', alt='picture of ronald')
+            .team__info.grid
+              .flex-column
+                .member-name Ronald
+                .member-position co-founder
+              .member-description I began my coding journey 5 years ago doing automation work for a small business in South SF. I created sleek front-end designs and complex back-end applications to streamline important business processes. Now I focus my efforts on designing websites and applications for small businesses around the world.
+          .member2
+            .team__img.img2
+              img(src='/imgs/team-pics/hp.webp', alt='picture of jason')
+            .team__info.grid
+              .flex-column
+                .member-name Jason
+                .member-position co-founder
+              .member-description As a designer with a passion for technology, I am always on the lookout for new and exciting ways to push the boundaries of what is possible. Whether its working on a solo project or collaborating with others, I am driven by my love for design and desire to create innovative solutions. My skills and knowledge are constantly evolving, and I am always looking to take on new challenges.
+          .section-title THE TEAM
+        .container-mobile.grid.hidden
+          a.team__img.img-ronald.active
+            img(
+              src='/imgs/team-pics/ronald.webp',
+              alt='picture of ronald',
+              data-member='ronald'
+            )
+          a.team__img.img-jason
+            img(
+              src='/imgs/team-pics/hp.webp',
+              alt='picture of jason',
+              data-member='jason'
+            )
+          .team__info.grid
+            .flex-column
+              .member-name Ronald
+              .member-position co-founder
+            .member-description I began my coding journey 5 years ago doing automation work for a small business in South SF. I created sleek front-end designs and complex back-end applications to streamline important business processes. Now I focus my efforts on designing websites and applications for small businesses around the world.
+          .section-title THE TEAM
+
+    //-! CONTACT US 
+    //- section#contact-us.contact-us.grid
+    //-   .contact-us__content.flex.init-animation
+    //-     .title.grid
+    //-       h2 How can we help?
+    //-       p Let&apos;s unlock together the next level of possibility!
+    //-       p.location HQ Location: San Francisco, California
+    //-     form#contact-form.contact-form.grid
+    //-       input#name(
+    //-         type='text',
+    //-         name='name',
+    //-         placeholder='full name',
+    //-         required
+    //-       )
+    //-       input#email(
+    //-         type='email',
+    //-         name='email',
+    //-         placeholder='email',
+    //-         required
+    //-       )
+    //-       select#budget(name='budget', required)
+    //-         option(value='', disabled='', selected='') Budget
+    //-         option(value='less than $1000') Less than $1,000
+    //-         option(value='$1000 - $5000') $1,000 - $5,000
+    //-         option(value='$5000 - $10000') $5,000 - $10,000
+    //-         option(value='over $10000') Over $10,000
+    //-       select#website-type(name='website-type', required)
+    //-         option(value='', disabled='', selected='') Type of websites
+    //-         option(value='landing page') Landing page
+    //-         option(value='multipage website') Multipage website
+    //-         option(value='full-stack webapp') Full-stack webapp
+    //-       textarea#message.message(
+    //-         name='message',
+    //-         placeholder='message',
+    //-         ,
+    //-         required
+    //-       )
+    //-       button.submit-btn.btn.flex(type='submit') Submit
+    //-         i.ph-arrow-circle-right-thin
+
+    //-     .social-logos.flex
+    //-       img(src='/imgs/logos/insta.svg', alt='logo of insta')
+    //-       img(src='/imgs/logos/twitter.svg', alt='logo of twitter')
+    //-       img(src='/imgs/logos/github.svg', alt='logo of github')
+    //-       img(src='/imgs/logos/devto.svg', alt='logo of devto')
+
+    //-     .section-title CONTACT US
+
+    //-! SIDE INDICATOR 
+    .side-indicator.flex.hide
+      a.bullet(href='#about-us') 
+      a.bullet(href='#projects') 
+      a.bullet(href='#team') 
+    //-   a.bullet(href='#contact-us') 
+
+  .popup-box.hide
+    p.popup-message This is a test message
