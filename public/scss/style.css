@@ -1322,6 +1322,9 @@ video {
   }
 }
 @media screen and (max-width: 26rem) {
+  .contact-us h2 {
+    font-size: 3rem;
+  }
   .contact-us__content {
     gap: 0.5rem;
   }
