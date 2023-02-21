@@ -31,6 +31,10 @@
     }
     .phone {
         margin-top: -1rem;
+
+        @media screen and (max-width: 35rem) {
+            margin-top: -0.2rem;
+        }
     }
 
     input,
