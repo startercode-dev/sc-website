@@ -20,6 +20,7 @@
         padding-left: 0.3rem; /* fix uneveness */
     }
 
+    .phone,
     .location {
         font-size: $step--2;
         font-style: italic;
@@ -27,6 +28,9 @@
         @media screen and (max-width: 26rem) {
             font-size: 1.2rem;
         }
+    }
+    .phone {
+        margin-top: -1rem;
     }
 
     input,

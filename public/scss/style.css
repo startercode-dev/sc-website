@@ -1175,14 +1175,19 @@ video {
   font-size: clamp(1.56rem, 1.18rem + 1.02vw, 2.4rem);
   padding-left: 0.3rem; /* fix uneveness */
 }
+.contact-us .phone,
 .contact-us .location {
   font-size: clamp(1.3rem, 1.02rem + 0.75vw, 1.92rem);
   font-style: italic;
 }
 @media screen and (max-width: 26rem) {
+  .contact-us .phone,
   .contact-us .location {
     font-size: 1.2rem;
   }
+}
+.contact-us .phone {
+  margin-top: -1rem;
 }
 .contact-us input,
 .contact-us select {
