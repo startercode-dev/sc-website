@@ -1,7 +1,7 @@
 import axios from 'axios';
 import $ from 'jquery';
 import { showAlert } from '../../../utils/alert';
-import { popupBox, getRandomInt } from '../../../utils/helper';
+import { popupBox, getRandomInt, clickScroll } from '../../../utils/helper';
 
 import jsLogo from '../../imgs/logos/jsLogo.svg';
 import cssLogo from '../../imgs/logos/cssLogo.svg';
@@ -11,26 +11,22 @@ import designImg from '../../imgs/about-us/design.webp';
 import developImg from '../../imgs/about-us/develop.webp';
 import funtionsImg from '../../imgs/about-us/funtions.webp';
 
-$('.learn-more-btn').on('click', (e) => {
-    e.preventDefault();
-    $('.about-us')[0].scrollIntoView({
-        behavior: 'smooth',
-    });
-});
-$('.cta-get-started, .contact-link').on('click', (e) => {
-    e.preventDefault();
-    $('.contact-us')[0].scrollIntoView({
-        behavior: 'smooth',
-    });
-});
+clickScroll('learn-more-btn', 'about-us');
+clickScroll('cta-get-started', 'contact-us');
+// clickScroll('contact-link', 'contact-us');
 
-const documentHeight = () => {
-    const doc = document.documentElement;
-    const height = window.innerHeight - $('.nav').height();
-    doc.style.setProperty('--doc-height', `${height}px`);
-};
-documentHeight();
-window.addEventListener('resize', documentHeight);
+clickScroll('bullet-about-us', 'about-us');
+clickScroll('bullet-projects', 'projects');
+clickScroll('bullet-team', 'team');
+clickScroll('bullet-contact-us', 'contact-us');
+
+// const documentHeight = () => {
+//     const doc = document.documentElement;
+//     const height = window.innerHeight - $('.nav').height();
+//     doc.style.setProperty('--doc-height', `${height}px`);
+// };
+// documentHeight();
+// window.addEventListener('resize', documentHeight);
 
 export const formSubmit = async () => {
     const data = {
@@ -329,21 +325,26 @@ heroObserver.observe(heroSection);
 const addCurrentClass = (entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
-            let currentSection = $(`a[href='#${entry.target.id}']`);
-            $('.bullet').removeClass('current');
+            // console.log(entry.target.dataset.title);
+            let currentSection = $(`.bullet-${entry.target.dataset.title}`);
+            // console.log(currentSection);
+            $('a.bullet').removeClass('current');
             currentSection.addClass('current');
         }
     });
 };
 const initAnimation = (entries) => {
     entries.forEach((entry) => {
-        if (entry.target.id) {
+        // don't run if it's hero section
+        if (entry.target.dataset.title !== 'hero') {
             if (entry.isIntersecting) {
-                $(`.${entry.target.id}__content`).removeClass('init-animation');
+                $(`.${entry.target.dataset.title}__content`).removeClass(
+                    'init-animation'
+                );
             } else {
-                if (entry.target.id !== 'contact-us') {
+                if (entry.target.dataset.title !== 'contact-us') {
                     // Contact us animation only run once
-                    $(`.${entry.target.id}__content`).addClass(
+                    $(`.${entry.target.dataset.title}__content`).addClass(
                         'init-animation'
                     );
                 }

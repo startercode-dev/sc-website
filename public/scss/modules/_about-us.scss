@@ -113,7 +113,11 @@
         border-radius: 5px;
         object-fit: cover;
         z-index: 1;
-        background-color: $sc-green;
+        background-image: radial-gradient(
+            circle farthest-corner at 10% 20%,
+            rgba(60, 97, 76, 1) 0%,
+            rgba(60, 88, 97, 1) 90%
+        );
     }
 
     .section-title {

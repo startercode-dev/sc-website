@@ -163,9 +163,14 @@
     }
 
     .project-img {
+        opacity: 0.5;
         padding: $space-2xs;
         padding-top: calc($space-2xs - 0.2rem); /* fix unevenness */
-        background-color: #3c614c66;
+        background-image: radial-gradient(
+            circle farthest-corner at 10% 20%,
+            rgba(60, 97, 76, 0.291) 0%,
+            rgba(60, 88, 97, 0.25) 90%
+        );
         border-radius: 5px;
 
         width: min(70vw, 56rem);
@@ -207,6 +212,10 @@
     }
 
     .active {
+        .project-img {
+            opacity: 1;
+        }
+
         .project-title {
             font-weight: 600;
 
@@ -218,7 +227,11 @@
         }
 
         .project-img {
-            background-color: $sc-green;
+            background-image: radial-gradient(
+                circle farthest-corner at 10% 20%,
+                rgba(60, 97, 76, 1) 0%,
+                rgba(60, 88, 97, 1) 90%
+            );
         }
     }
 

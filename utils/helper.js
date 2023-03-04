@@ -28,3 +28,13 @@ export const popupBox = (msg) => {
 export const getRandomInt = (max) => {
     return Math.floor(Math.random() * max + 1);
 };
+
+// Click Scroll to view
+export const clickScroll = (className, section) => {
+    //click and scrolling to the selected section
+    $(`.${className}`).on('click', () => {
+        $(`.${section}`)[0].scrollIntoView({
+            behavior: 'smooth',
+        });
+    });
+};

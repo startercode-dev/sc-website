@@ -1,18 +1,18 @@
 extends base
 
 block body
-  nav.nav
-    .nav-bar.flex.space-between
-      a.text-logo-link(href='/')
-        img.text-logo(src='/imgs/text-logo.png', alt='text startercode logo')
-      a.icon-logo-link(href='/')
-        img.icon-logo(src='/imgs/main-logo.png', alt='icon startercode logo')
-      .nav-links
-        a.contact-link.link(href='#contact-us') contact
+  //- nav.nav
+  //-   .nav-bar.flex.space-between
+  //-     a.text-logo-link(href='/')
+  //-       img.text-logo(src='/imgs/text-logo.png', alt='text startercode logo')
+  //-     a.icon-logo-link(href='/')
+  //-       img.icon-logo(src='/imgs/main-logo.png', alt='icon startercode logo')
+  //-     .nav-links
+  //-       a.contact-link.link contact
 
   main.fullpage
     //-! HERO
-    section.hero
+    section.hero(data-title='hero')
       .hero__content.grid.init-animation
         .hero__main.flex
           .main-left
@@ -24,17 +24,17 @@ block body
             br
             | share
         .hero__cta
-          a.link.cta-get-started(href='#contact-us') Get Started
+          a.link.cta-get-started Get Started
           .circular-text Design-Develop-Share-
         .hero__description
           h1 Design, develop, and share your website and web app with the world! Stand out from the crowd and capture the attention of your ideal customers with our captivating designs, that showcase the essence of your business and lead them seamlessly to sign up!
         .hero__learn-more.flex
-          a.btn.learn-more-btn(href='#about-us') learn more
+          a.btn.learn-more-btn learn more
           i.ph-arrow-circle-down-thin
 
     //-! ABOUT US 
-    section#about-us.about-us.grid
-      #tab1.about-us__content.grid.init-animation
+    section.about-us.grid(data-title='about-us')
+      .about-us__content.grid.init-animation
         .content-main.flex
           ul.tabs.flex
             li
@@ -45,7 +45,7 @@ block body
               a.tab.tab--3.btn(data-tab='3') 03
           h2.title Design &amp; Layout
           p.description We design visually appealing and user-friendly websites to effectively communicate our clients&apos; message to their target audience. Our team takes the time to understand our clients&apos; goals and the needs of their target audience to create a website that meets their specific needs.
-          a.cta-get-started.btn(href='#contact-us') Get Started
+          a.cta-get-started.btn Get Started
         .content-img
           img.img-1(
             src='/imgs/about-us/design.webp',
@@ -54,7 +54,7 @@ block body
           .section-title ABOUT US
 
     //-! PROJECTS
-    section#projects.projects.grid
+    section.projects.grid(data-title='projects')
       .projects__content.grid.init-animation
         .projects__info.flex
           //- dynamic render
@@ -107,7 +107,7 @@ block body
           .swiper-scrollbar
 
     //-! THE TEAM
-    section#team.team.grid
+    section.team.grid(data-title='team')
       .team__content.init-animation
         .container.grid
           .member1
@@ -148,12 +148,13 @@ block body
           .section-title THE TEAM
 
     //-! CONTACT US 
-    //- section#contact-us.contact-us.grid
+    //- section.contact-us.grid(data-title='contact-us')
     //-   .contact-us__content.flex.init-animation
     //-     .title.grid
     //-       h2 How can we help?
     //-       p Let&apos;s unlock together the next level of possibility!
-    //-       p.location HQ Location: San Francisco, California
+    //-       p.location Based in San Francisco, California 94132
+    //-       p.phone Phone: 415-309-7270
     //-     form#contact-form.contact-form.grid
     //-       input#name(
     //-         type='text',
@@ -197,10 +198,10 @@ block body
 
     //-! SIDE INDICATOR 
     .side-indicator.flex.hide
-      a.bullet(href='#about-us') 
-      a.bullet(href='#projects') 
-      a.bullet(href='#team') 
-    //-   a.bullet(href='#contact-us') 
+      a.bullet.bullet-about-us
+      a.bullet.bullet-projects
+      a.bullet.bullet-team
+      //- a.bullet.bullet-contact-us
 
   .popup-box.hide
     p.popup-message This is a test message

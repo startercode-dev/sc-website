@@ -4,8 +4,8 @@
     scroll-snap-type: y mandatory;
     overflow-y: scroll;
     scroll-behavior: smooth;
-    height: 100vh;
-    height: $docHeight;
+    height: 100svh;
+    // height: $docHeight;
 
     section {
         scroll-snap-align: start;
