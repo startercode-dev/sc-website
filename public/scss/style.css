@@ -819,6 +819,7 @@ video {
 }
 .projects .project-img {
   opacity: 0.5;
+  filter: grayscale(0.95);
   padding: clamp(0.94rem, 0.77rem + 0.45vw, 1.31rem);
   padding-top: calc(clamp(0.94rem, 0.77rem + 0.45vw, 1.31rem) - 0.2rem); /* fix unevenness */
   background-image: radial-gradient(circle farthest-corner at 10% 20%, rgba(60, 97, 76, 0.291) 0%, rgba(60, 88, 97, 0.25) 90%);
@@ -869,6 +870,7 @@ video {
 }
 .projects .active .project-img {
   opacity: 1;
+  filter: grayscale(0);
 }
 .projects .active .project-title {
   font-weight: 600;
@@ -1155,7 +1157,7 @@ video {
 .team .container-mobile .img-ronald,
 .team .container-mobile .img-jason,
 .team .container-mobile .team__info {
-  transition: opacity 500ms ease-out 100ms, transform 500ms ease-out 100ms;
+  transition: opacity 500ms ease-out 100ms, transform 200ms ease-out 100ms;
 }
 
 .contact-us {
