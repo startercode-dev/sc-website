@@ -26,7 +26,7 @@ exports.formSubmit = catchAsync(async (req, res, next) => {
         const htmlReplaced = html.replace('{{ sendRequest }}', requestSendUrl);
 
         await sendEmail({
-            email: 'jkuang41@gmail.com',
+            email: req.body.email,
             subject: 'startercode Confirmation Email',
             html: htmlReplaced,
         });

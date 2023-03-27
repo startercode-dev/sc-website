@@ -7,9 +7,9 @@ import jsLogo from '../../imgs/logos/jsLogo.svg';
 import cssLogo from '../../imgs/logos/cssLogo.svg';
 import htmlLogo from '../../imgs/logos/htmlLogo.svg';
 import nodejsLogo from '../../imgs/logos/nodejsLogo.svg';
-import designImg from '../../imgs/about-us/design.webp';
-import developImg from '../../imgs/about-us/develop.webp';
-import funtionsImg from '../../imgs/about-us/funtions.webp';
+// import designImg from '../../imgs/about-us/design.webp';
+// import developImg from '../../imgs/about-us/develop.webp';
+// import funtionsImg from '../../imgs/about-us/funtions.webp';
 
 clickScroll('learn-more-btn', 'about-us');
 clickScroll('cta-get-started', 'contact-us');
@@ -88,7 +88,6 @@ const tabsData = [
         description: `We design visually appealing and user-friendly websites tailored
         to effectively communicate our clients' message and meet their
         target audience's needs. Our team takes the time to understand our clients' goals and the needs of their target audience to create a website that meets their specific needs.`,
-        img: designImg,
         alt: `Image of a person designing a wireframe on an iPad device.`,
     },
     {
@@ -98,7 +97,6 @@ const tabsData = [
         fullstack webapp, our team of experts can help bring your vision
         to life. We use the latest technologies for optimal performance
         and user experience.`,
-        img: developImg,
         alt: `A picture of a computer on a desk with codes on the screen.`,
     },
     {
@@ -107,7 +105,6 @@ const tabsData = [
         functionalities beyond the basic design and layout. Our team can
         help enhance your website by adding features such as user
         authentication, CRUD operations, and even CRM systems.`,
-        img: funtionsImg,
         alt: `A computer showing an admin dashboard for a webapp.`,
     },
 ];
@@ -118,8 +115,9 @@ $('.tab').on('click', (e) => {
     let data = tabsData[`${e.target.dataset.tab - 1}`];
     $('.about-us .title').text(data.title);
     $('.about-us .description').text(data.description);
-    $('.about-us .img-1').attr('src', data.img);
     $('.about-us .img-1').attr('alt', data.alt);
+    $('.about-us img').addClass('hidden');
+    $(`.about-us .img-${e.target.dataset.tab} `).removeClass('hidden');
 });
 
 /* **************************** */
@@ -341,14 +339,15 @@ const initAnimation = (entries) => {
                 $(`.${entry.target.dataset.title}__content`).removeClass(
                     'init-animation'
                 );
-            } else {
-                if (entry.target.dataset.title !== 'contact-us') {
-                    // Contact us animation only run once
-                    $(`.${entry.target.dataset.title}__content`).addClass(
-                        'init-animation'
-                    );
-                }
             }
+            // else {
+            //     if (entry.target.dataset.title !== 'contact-us') {
+            //         // Contact us animation only run once
+            //         $(`.${entry.target.dataset.title}__content`).addClass(
+            //             'init-animation'
+            //         );
+            //     }
+            // }
         }
     });
 };
