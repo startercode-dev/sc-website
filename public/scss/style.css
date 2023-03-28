@@ -819,7 +819,7 @@ video {
 }
 .projects .project-img {
   opacity: 0.5;
-  filter: grayscale(0.95);
+  filter: grayscale(0.5);
   padding: clamp(0.94rem, 0.77rem + 0.45vw, 1.31rem);
   padding-top: calc(clamp(0.94rem, 0.77rem + 0.45vw, 1.31rem) - 0.2rem); /* fix unevenness */
   background-image: radial-gradient(circle farthest-corner at 10% 20%, rgba(60, 97, 76, 0.291) 0%, rgba(60, 88, 97, 0.25) 90%);

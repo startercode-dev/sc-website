@@ -164,7 +164,7 @@
 
     .project-img {
         opacity: 0.5;
-        filter: grayscale(0.95);
+        filter: grayscale(0.5);
         padding: $space-2xs;
         padding-top: calc($space-2xs - 0.2rem); /* fix unevenness */
         background-image: radial-gradient(
